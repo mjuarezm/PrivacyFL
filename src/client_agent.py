@@ -140,7 +140,7 @@ class ClientAgent(Agent):
                 'Not enough data to support a {}th iteration. Either change iteration data length in config.py or decrease amount of iterations.'.format(
                     iteration)))
 
-        if config.USING_CUMULATIVE: # choosing between algorithms
+        if not config.USING_CUMULATIVE: # choosing between algorithms
             # compute weights from scratch
             weights, intercepts = self.compute_weights_noncumulative(iteration)
         else:
